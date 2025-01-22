@@ -1,51 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Single kona Page Web App</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Single Page Website - Yksi tiedosto</title>
+
+  <style>
+    /* ==========================
+       YLEISET TYYLIT
+       ========================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      background-color: #f4f4f4;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      background: #333;
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0;
+    }
+
+    nav a {
+      color: #fff;
+      display: block;
+      padding: 0.75rem 1rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #575757;
+    }
+
+    /* ==========================
+       SIVUN OSIOT
+       ========================== */
+    section {
+      padding: 2rem 1rem;
+      min-height: 100vh; /* Simuloidaan hieman pitempää sisältöä */
+    }
+
+    #section1 { background-color: #ececec; }
+    #section2 { background-color: #fff; }
+    #section3 { background-color: #ececec; }
+
+    h2 {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    /* ==========================
+       FOOTER
+       ========================== */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* ==========================
+       RESPONSIVISET MUISTIINPANOT
+       ========================== */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav a {
+        text-align: center;
+      }
+    }
+  </style>
+
+  <script>
+    // Yksinkertainen JavaScript-esimerkki:
+    // Lisätään nappi, joka vierittää sivun ylälaitaan.
+    document.addEventListener("DOMContentLoaded", function() {
+      const toTopButton = document.createElement("button");
+      toTopButton.textContent = "Takaisin ylös";
+      toTopButton.style.position = "fixed";
+      toTopButton.style.bottom = "20px";
+      toTopButton.style.right = "20px";
+      toTopButton.style.padding = "10px";
+      toTopButton.style.display = "none";
+
+      document.body.appendChild(toTopButton);
+
+      window.addEventListener("scroll", function() {
+        if (window.scrollY > 300) {
+          toTopButton.style.display = "block";
+        } else {
+          toTopButton.style.display = "none";
+        }
+      });
+
+      toTopButton.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  </script>
 </head>
 <body>
+
   <header>
-    <h1>Welcome to My kona Single Page</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <h1>Tervetuloa Single Page -sivulle</h1>
   </header>
 
+  <nav>
+    <ul>
+      <li><a href="#section1">Osio 1</a></li>
+      <li><a href="#section2">Osio 2</a></li>
+      <li><a href="#section3">Osio 3</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <section id="home" class="section">
-      <h2>Home</h2>
-      <p>This is the home section. Scroll down to explore more!</p>
+    <section id="section1">
+      <h2>Osio 1</h2>
+      <p>
+        Tämä on ensimmäinen osio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Curabitur interdum dictum elit, nec porta tortor mollis at. Pellentesque habitant
+        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+      </p>
     </section>
 
-    <section id="about" class="section">
-      <h2>About</h2>
-      <p>This is the about section. Learn more about this page here.</p>
+    <section id="section2">
+      <h2>Osio 2</h2>
+      <p>
+        Tämä on toinen osio. Morbi ac arcu non dui gravida convallis eget sed ante.
+        Etiam vulputate, sapien quis tempor sagittis, sem justo feugiat ante, sit amet 
+        commodo justo lectus at massa.
+      </p>
     </section>
 
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>Feel free to reach out via the form below:</p>
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-        <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-      <p id="formFeedback"></p>
+    <section id="section3">
+      <h2>Osio 3</h2>
+      <p>
+        Tämä on kolmas osio. Nam ornare interdum lorem, at fringilla nulla dictum eu. 
+        Pellentesque in lorem a mauris aliquam consequat. Nullam nec sapien efficitur, 
+        elementum nulla eget, dictum magna.
+      </p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 My Single Page</p>
+    <p>Tekijänoikeudet &copy; 2025 Demo-sivu</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
