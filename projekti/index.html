@@ -6,9 +6,6 @@
   <title>Single Page Website - Yksi tiedosto</title>
 
   <style>
-    /* ==========================
-       YLEISET TYYLIT
-       ========================== */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -54,12 +51,10 @@
       background: #575757;
     }
 
-    /* ==========================
-       SIVUN OSIOT
-       ========================== */
+
     section {
       padding: 2rem 1rem;
-      min-height: 100vh; /* Simuloidaan hieman pitempää sisältöä */
+      min-height: 100vh;
     }
 
     #section1 { background-color: #ececec; }
@@ -71,9 +66,7 @@
       text-align: center;
     }
 
-    /* ==========================
-       FOOTER
-       ========================== */
+
     footer {
       background: #333;
       color: #fff;
@@ -81,9 +74,7 @@
       padding: 1rem;
     }
 
-    /* ==========================
-       RESPONSIVISET MUISTIINPANOT
-       ========================== */
+
     @media (max-width: 600px) {
       nav ul {
         flex-direction: column;
@@ -96,8 +87,6 @@
   </style>
 
   <script>
-    // Yksinkertainen JavaScript-esimerkki:
-    // Lisätään nappi, joka vierittää sivun ylälaitaan.
     document.addEventListener("DOMContentLoaded", function() {
       const toTopButton = document.createElement("button");
       toTopButton.textContent = "Takaisin ylös";
@@ -141,33 +130,27 @@
     <section id="section1">
       <h2>Osio 1</h2>
       <p>
-        Tämä on ensimmäinen osio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Curabitur interdum dictum elit, nec porta tortor mollis at. Pellentesque habitant
-        morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        Tämä on ensimmäinen osio. 
       </p>
     </section>
 
     <section id="section2">
       <h2>Osio 2</h2>
       <p>
-        Tämä on toinen osio. Morbi ac arcu non dui gravida convallis eget sed ante.
-        Etiam vulputate, sapien quis tempor sagittis, sem justo feugiat ante, sit amet 
-        commodo justo lectus at massa.
+        Tämä on toinen osio. 
       </p>
     </section>
 
     <section id="section3">
       <h2>Osio 3</h2>
       <p>
-        Tämä on kolmas osio. Nam ornare interdum lorem, at fringilla nulla dictum eu. 
-        Pellentesque in lorem a mauris aliquam consequat. Nullam nec sapien efficitur, 
-        elementum nulla eget, dictum magna.
+        Tämä on kolmas osio. 
       </p>
     </section>
   </main>
 
   <footer>
-    <p>Tekijänoikeudet &copy; 2025 Demo-sivu</p>
+    <p>Matias Viinikainen</p>
   </footer>
 
 </body>
